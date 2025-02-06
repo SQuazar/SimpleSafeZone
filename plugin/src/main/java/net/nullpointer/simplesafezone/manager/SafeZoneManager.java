@@ -70,9 +70,20 @@ public class SafeZoneManager {
         SafeZone safeZone = safeZones.remove(ownerUuid);
         if (safeZone != null && plugin.getConfig().getBoolean(Config.STORE_ZONES.getKey()))
             removeSafeZoneFile(safeZone);
+        if (plugin.hasWorldEditSupport()) {
+            Player player;
+            if ((player = Bukkit.getPlayer(ownerUuid)) != null)
+                plugin.getWorldEditHook().removeCUI(player);
+        }
     }
 
     public void deleteAllSafeZones() {
+        if (plugin.hasWorldEditSupport())
+            safeZones.values().forEach(safeZone -> {
+                Player player;
+                if ((player = Bukkit.getPlayer(safeZone.getOwnerUuid())) != null)
+                    plugin.getWorldEditHook().removeCUI(player);
+            });
         safeZones.clear();
     }
 
@@ -88,6 +99,8 @@ public class SafeZoneManager {
                     player.sendMessage(colorize(plugin.getMessages().getString(Messages.SAFE_ZONE_EXPIRED.getKey())));
                 if (plugin.getConfig().getBoolean(Config.STORE_ZONES.getKey()))
                     removeSafeZoneFile(safeZone);
+                if (plugin.hasWorldEditSupport())
+                    plugin.getWorldEditHook().removeCUI(player);
                 return true;
             }
             return false;
