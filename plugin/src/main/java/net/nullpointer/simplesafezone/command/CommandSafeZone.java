@@ -1,6 +1,8 @@
 package net.nullpointer.simplesafezone.command;
 
 import net.nullpointer.simplesafezone.SimpleSafeZone;
+import net.nullpointer.simplesafezone.command.cui.CommandZoneDesel;
+import net.nullpointer.simplesafezone.command.cui.CommandZoneSel;
 import net.nullpointer.simplesafezone.util.Permissions;
 import org.bukkit.command.CommandSender;
 
@@ -15,6 +17,11 @@ public class CommandSafeZone extends CommandBase {
         registerSubCommand("list", new CommandZoneList(plugin, this));
         registerSubCommand("info", new CommandZoneInfo(plugin, this));
         registerSubCommand("extend", new CommandZoneExtend(plugin, this));
+
+        if (plugin.hasWorldEditSupport()) {
+            registerSubCommand("sel", new CommandZoneSel(plugin, this));
+            registerSubCommand("desel", new CommandZoneDesel(plugin, this));
+        }
     }
 
     @Override

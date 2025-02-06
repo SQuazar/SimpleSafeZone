@@ -17,4 +17,6 @@ public class Permissions {
     public static final String SAFE_ZONE_LIST = "simplesafezone.command.list";
     public static final String SAFE_ZONE_DELETE_OTHER = "simplesafezone.command.deleteother";
     public static final String SAFE_ZONE_DELETE_ALL = "simplesafezone.command.deleteall";
+
+    public static final String SAFE_ZONE_CUI = "simplesafezone.cui";
 }
