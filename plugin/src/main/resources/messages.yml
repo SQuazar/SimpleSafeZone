@@ -1,0 +1,36 @@
+no-permission: "&cYou don't have permissions for execute this command!"
+unknown-command: "&3[SimpleSafeZone] &cUnknown command"
+only-players: '&3[SimpleSafeZone] &cOnly players can execute this command!'
+already-exists: '&3[SimpleSafeZone] &cYou already have safe zone!'
+invalid-radius: '&3[SimpleSafeZone] &cInvalid radius'
+type-not-found: "&3[SimpleSafeZone] &cSafe zone type isn't found!"
+min-radius-restriction: '&3[SimpleSafeZone] &cYour safe zone is so small'
+max-radius-restriction: '&3[SimpleSafeZone] &cYour safe zone is so big'
+safe-zone-overlaps: '&3[SimpleSafeZone] &cYour safe zone overlaps other safe zone'
+enter-option: '&3[SimpleSafeZone] &cEnter option!'
+option-not-found: '&3[SimpleSafeZone] &cOption not found!'
+enter-rule: '&3[SimpleSafeZone] &cEnter zone rule!'
+rule-not-found: '&3[SimpleSafeZone] &cZone rule not found!'
+enter-boolean: '&3[SimpleSafeZone] &cEnter boolean value (true/false)'
+invalid-boolean: '&3[SimpleSafeZone] &cInvalid boolean value'
+enter-action: '&3[SimpleSafeZone] &cEnter action!'
+
+safe-zone-created: '&3[SimpleSafeZone] &7Safe zone successfully created!'
+safe-zone-expired: '&3[SimpleSafeZone] &7Your safe zone is expired'
+safe-zone-deleted: '&3[SimpleSafeZone] &7Safe zone &d%owner_name% &7is deleted'
+safe-zone-not-found: '&3[SimpleSafeZone] &7Safe zone not found!'
+safe-zone-select: '&d(WE) &3[SimpleSafeZone] &7Safe zone selected'
+safe-zone-deselect: '&d(WE) &3[SimpleSafeZone] &7Safe zone deselected'
+
+entities-removed: '&3[SimpleSafeZone] &7Entities removed in safe zone (%count%)'
+entities-tp: '&3[SimpleSafeZone] &7Entities teleported to your location (%count%)'
+
+rule-state-changed: '&3[SimpleSafeZone] &7Rule &d%rule% &7state for your safe zone changed to &d%state%&7!'
+
+rules:
+  break-block-disable: '&3[SimpleSafeZone] &7Break blocks disabled'
+  break-block-enable: '&3[SimpleSafeZone] &7Break blocks enabled'
+  place-block-disable: '&3[SimpleSafeZone] &7Block place disabled'
+  place-block-enable: '&3[SimpleSafeZone] &7Block place enabled'
+  pickup-disable: '&3[SimpleSafeZone] &7Pickup items disabled'
+  pickup-enable: '&3[SimpleSafeZone] &7Pickup items enabled'

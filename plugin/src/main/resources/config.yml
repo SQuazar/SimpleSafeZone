@@ -1,0 +1,9 @@
+auto-cui: true
+life-time: 15 # In minutes
+store-zones: false # Store zones in file
+
+safezone:
+  default-radius: 10
+  max-radius: 30
+  min-radius: 5
+  default-type: cuboid # [cuboid or sphere]

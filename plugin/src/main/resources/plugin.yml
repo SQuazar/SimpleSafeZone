@@ -1,0 +1,11 @@
+name: SimpleSafeZone
+version: 1.0
+main: net.nullpointer.simplesafezone.SimpleSafeZone
+softdepend:
+  - WorldEdit
+commands:
+  safezone:
+    usage: /safezone [create/delete]
+    description: Simple safe zone command
+    aliases:
+      - sz

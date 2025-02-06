@@ -1,0 +1,17 @@
+rootProject.name = 'SimpleSafeZone'
+
+include 'plugin'
+include 'we6'
+include 'we7'
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.enginehub.org/repo/' }
+        maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+        maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    }
+}
+include 'core'
+
