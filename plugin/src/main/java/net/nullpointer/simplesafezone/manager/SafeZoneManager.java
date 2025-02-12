@@ -36,6 +36,11 @@ public class SafeZoneManager {
     }
 
     public boolean createSafeZone(Player player, ZoneType zoneType, int radius) {
+        if (!plugin.getConfig().getStringList(Config.ALLOWED_WORLDS.getKey()).contains(player.getWorld().getName())) {
+            player.sendMessage(colorize(plugin.getMessages().getString(Messages.WORLD_RESTRICTION.getKey())));
+            return false;
+        }
+
         if (safeZones.containsKey(player.getUniqueId())) {
             player.sendMessage(colorize(plugin.getMessages().getString(Messages.ALREADY_EXISTS.getKey())));
             return false;
