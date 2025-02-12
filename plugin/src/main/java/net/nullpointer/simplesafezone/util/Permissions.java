@@ -12,6 +12,11 @@ public class Permissions {
     public static final String SAFE_ZONE_ENTITY = "simplesafezone.command.entity";
     public static final String SAFE_ZONE_ENTITY_REMOVE = "simplesafezone.command.entity.remove";
     public static final String SAFE_ZONE_ENTITY_TP = "simplesafezone.command.entity.tp";
+    public static final String SAFE_ZONE_PLAYER = "simplesafezone.command.player";
+    public static final String SAFE_ZONE_PLAYER_TP = "simplesafezone.command.player.tp";
+    public static final String SAFE_ZONE_PLAYER_SPAWN = "simplesafezone.command.player.spawn";
+    public static final String SAFE_ZONE_PLAYER_HOME = "simplesafezone.command.player.home";
+    public static final String SAFE_ZONE_ITEM = "simplesafezone.command.item";
     public static final String SAFE_ZONE_ITEM_REMOVE = "simplesafezone.command.item.remove";
     public static final String SAFE_ZONE_ITEM_TP = "simplesafezone.command.item.tp";
     public static final String SAFE_ZONE_LIST = "simplesafezone.command.list";
