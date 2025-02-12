@@ -3,6 +3,10 @@ package net.nullpointer.simplesafezone.command;
 import net.nullpointer.simplesafezone.SimpleSafeZone;
 import net.nullpointer.simplesafezone.command.cui.CommandZoneDesel;
 import net.nullpointer.simplesafezone.command.cui.CommandZoneSel;
+import net.nullpointer.simplesafezone.command.entity.CommandZoneEntity;
+import net.nullpointer.simplesafezone.command.item.CommandZoneItem;
+import net.nullpointer.simplesafezone.command.options.CommandZoneOptions;
+import net.nullpointer.simplesafezone.command.player.CommandZonePlayer;
 import net.nullpointer.simplesafezone.util.Permissions;
 import org.bukkit.command.CommandSender;
 
@@ -14,9 +18,12 @@ public class CommandSafeZone extends CommandBase {
         registerSubCommand("delete", new CommandZoneDelete(plugin, this));
         registerSubCommand("option", new CommandZoneOptions(plugin, this));
         registerSubCommand("entity", new CommandZoneEntity(plugin, this));
+        registerSubCommand("player", new CommandZonePlayer(plugin, this));
+        registerSubCommand("item", new CommandZoneItem(plugin, this));
         registerSubCommand("list", new CommandZoneList(plugin, this));
         registerSubCommand("info", new CommandZoneInfo(plugin, this));
         registerSubCommand("extend", new CommandZoneExtend(plugin, this));
+        registerSubCommand("reload", new CommandReload(plugin, this));
 
         if (plugin.hasWorldEditSupport()) {
             registerSubCommand("sel", new CommandZoneSel(plugin, this));
