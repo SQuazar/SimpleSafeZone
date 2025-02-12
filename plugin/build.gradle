@@ -9,6 +9,7 @@ dependencies {
     implementation project(':core')
     implementation project(':we6')
     implementation project(':we7')
+    implementation project(':essentials')
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
