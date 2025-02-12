@@ -23,6 +23,7 @@ public final class SphereBoundingBox extends BoundingBox implements Configuratio
 
     @Override
     public boolean contains(Location location) {
+        if (!location.getWorld().getUID().equals(this.center.getWorld().getUID())) return false;
         return contains(location.getX(), location.getY(), location.getZ());
     }
 

@@ -64,6 +64,7 @@ public final class CuboidBoundingBox extends BoundingBox implements Configuratio
     @Override
     public boolean contains(Location location) {
         Validate.notNull(location, "Location is null!");
+        if (!location.getWorld().getUID().equals(world.getUID())) return false;
         return contains(location.getX(), location.getY(), location.getZ());
     }
 
