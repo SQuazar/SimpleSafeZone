@@ -1,5 +1,6 @@
 no-permission: "&cYou don't have permissions for execute this command!"
 unknown-command: "&3[SimpleSafeZone] &cUnknown command"
+world-restriction: "&3[SimpleSafeZone] &cYou can't create safe zone in this world"
 only-players: '&3[SimpleSafeZone] &cOnly players can execute this command!'
 already-exists: '&3[SimpleSafeZone] &cYou already have safe zone!'
 invalid-radius: '&3[SimpleSafeZone] &cInvalid radius'
@@ -21,6 +22,13 @@ safe-zone-deleted: '&3[SimpleSafeZone] &7Safe zone &d%owner_name% &7is deleted'
 safe-zone-not-found: '&3[SimpleSafeZone] &7Safe zone not found!'
 safe-zone-select: '&d(WE) &3[SimpleSafeZone] &7Safe zone selected'
 safe-zone-deselect: '&d(WE) &3[SimpleSafeZone] &7Safe zone deselected'
+
+players-tp: '&3[SimpleSafeZone] &7Players teleported to your location'
+players-spawn: '&3[SimpleSafeZone] &7Players teleported to spawn'
+players-home: '&3[SimpleSafeZone] &7Players teleported to home'
+
+items-removed: '&3[SimpleSafeZone] &7Items removed in safe zone (%count%)'
+items-tp: '&3[SimpleSafeZone] &7Items teleported to your location (%count%)'
 
 entities-removed: '&3[SimpleSafeZone] &7Entities removed in safe zone (%count%)'
 entities-tp: '&3[SimpleSafeZone] &7Entities teleported to your location (%count%)'

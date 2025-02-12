@@ -3,6 +3,7 @@ package net.nullpointer.simplesafezone.util;
 public enum Messages {
     NO_PERMISSION("no-permission"),
     UNKNOWN_COMMAND("unknown-command"),
+    WORLD_RESTRICTION("world-restriction"),
     ONLY_PLAYERS("only-players"),
     ALREADY_EXISTS("already-exists"),
     INVALID_RADIUS("invalid-radius"),
@@ -25,8 +26,14 @@ public enum Messages {
     SAFE_ZONE_SELECTED("safe-zone-selected"),
     SAFE_ZONE_DESELECTED("safe-zone-deselected"),
 
+    PLAYERS_TP("players-tp"),
+    PLAYERS_HOME("players-home"),
+    PLAYERS_SPAWN("players-spawn"),
+
     ENTITIES_REMOVED("entities-removed"),
     ENTITIES_TP("entities-tp"),
+    ITEMS_REMOVED("items-removed"),
+    ITEMS_TP("items-tp"),
 
     RULE_STATE_CHANGED("rule-state-changed"),
 
