@@ -1,12 +1,15 @@
 package net.nullpointer.simplesafezone;
 
 import net.nullpointer.simplesafezone.command.CommandSafeZone;
+import net.nullpointer.simplesafezone.hook.essentials.EssentialsHook;
 import net.nullpointer.simplesafezone.hook.worldedit.we6.WEHook6;
 import net.nullpointer.simplesafezone.hook.worldedit.we7.WEHook7;
 import net.nullpointer.simplesafezone.hook.worldedit.WorldEditHook;
+import net.nullpointer.simplesafezone.hool.essentials.EssentialsHookImpl;
 import net.nullpointer.simplesafezone.listener.SafeZoneListener;
 import net.nullpointer.simplesafezone.manager.SafeZoneManager;
 import net.nullpointer.simplesafezone.util.Config;
+import net.nullpointer.simplesafezone.util.ConfigActualizer;
 import net.nullpointer.simplesafezone.util.bb.CuboidBoundingBox;
 import net.nullpointer.simplesafezone.util.bb.SphereBoundingBox;
 import net.nullpointer.simplesafezone.zone.SafeZone;
@@ -23,6 +26,7 @@ import java.io.IOException;
 public final class SimpleSafeZone extends JavaPlugin {
     private YamlConfiguration messages;
     private WorldEditHook worldEditHook;
+    private EssentialsHook essentialsHook;
 
     private SafeZoneManager safeZoneManager;
 
@@ -33,6 +37,7 @@ public final class SimpleSafeZone extends JavaPlugin {
         if (!setupWorldEditHook()) {
             getLogger().warning("WorldEdit is missing");
         }
+        setupEssentialsHook();
 
         safeZoneManager = new SafeZoneManager(this);
 
@@ -69,8 +74,16 @@ public final class SimpleSafeZone extends JavaPlugin {
         return worldEditHook;
     }
 
+    public EssentialsHook getEssentialsHook() {
+        return essentialsHook;
+    }
+
     public boolean hasWorldEditSupport() {
         return worldEditHook != null;
+    }
+
+    public boolean hasEssentialsSupport() {
+        return essentialsHook != null;
     }
 
     private void setupConfig() {
@@ -80,7 +93,18 @@ public final class SimpleSafeZone extends JavaPlugin {
         if (!messagesFile.exists())
             saveResource("messages.yml", false);
 
-        messages = YamlConfiguration.loadConfiguration(messagesFile);
+        ConfigActualizer actualizer = new ConfigActualizer(this);
+        try {
+            messages = actualizer.actualize("messages.yml");
+        } catch (IOException e) {
+            getLogger().severe("Cannot actualize messages.yml");
+        }
+        try {
+            actualizer.actualize("config.yml");
+            reloadConfig();
+        } catch (IOException e) {
+            getLogger().severe("Cannot actualize config.yml");
+        }
 
         ConfigurationSerialization.registerClass(SafeZone.class);
         ConfigurationSerialization.registerClass(SphereBoundingBox.class);
@@ -100,5 +124,12 @@ public final class SimpleSafeZone extends JavaPlugin {
             return true;
         }
         return false;
+    }
+
+    private boolean setupEssentialsHook() {
+        Plugin plugin = getServer().getPluginManager().getPlugin("Essentials");
+        if (plugin == null) return false;
+        essentialsHook = new EssentialsHookImpl();
+        return true;
     }
 }
