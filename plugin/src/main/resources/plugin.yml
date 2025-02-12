@@ -3,6 +3,7 @@ version: 1.0.1
 main: net.nullpointer.simplesafezone.SimpleSafeZone
 softdepend:
   - WorldEdit
+  - Essentials
 commands:
   safezone:
     usage: /safezone [create/delete]
